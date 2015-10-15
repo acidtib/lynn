@@ -47,4 +47,5 @@ group :development do
   gem 'spring'
 
   gem 'thin'
+  gem 'rails-erd'
 end
