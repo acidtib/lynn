@@ -48,6 +48,6 @@ group :development do
 
   gem 'thin'
   gem 'rails-erd'
-
   gem 'faker'
+  gem 'annotate'
 end
