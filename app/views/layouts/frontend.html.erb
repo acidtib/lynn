@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Remesa</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="top" class="scrollspy">
+
+  <!-- Pre Loader -->
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+
+
+  <!--Navigation-->
+  <div class="navbar-fixed">
+    <nav id="nav_f" class="default_color" role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <%= link_to "Remesa", root_url, id: "logo-container", class: "brand-logo" %>
+
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#intro">Service</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <% if user_signed_in? %>
+                <li>
+                  <%= link_to dashboard_path do %>
+                    My Account <i class="material-icons right">perm_identity</i>
+                  <% end %>
+                </li>
+              </ul>
+            <% else %>
+              <li>
+                <%= link_to('Login', new_user_session_path)  %>
+              </li>
+              <li>
+                <%= link_to('Register', new_user_registration_path)  %>
+              </li>
+            <% end %>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="#intro">Service</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <%= yield %>
+
+
+  <p class="notice"><%= notice %></p>
+         <p class="alert"><%= alert %></p>
+
+
+
+</body>
+</html>
