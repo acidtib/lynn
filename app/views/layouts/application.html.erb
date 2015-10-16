@@ -6,6 +6,7 @@
   <title>Remesa</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
@@ -78,29 +79,16 @@
     </div>
   </div>
 
-<ul>
-  <% if user_signed_in? %>
-    <li>
-      <%= link_to('Edit registration', edit_user_registration_path) %>
-    </li>
-    <li>
-    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-    </li>
-  <% else %>
-    <li>
-      <%= link_to('Login', new_user_session_path)  %>
-    </li>
-    <li>
-      <%= link_to('Register', new_user_registration_path)  %>
-    </li>
-  <% end %>
-</ul>
-
 
   <p class="notice"><%= notice %></p>
          <p class="alert"><%= alert %></p>
 
 
+  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red">
+      <i class="fa fa-plus"></i>
+    </a>
+  </div>
 
 </body>
 </html>
