@@ -50,4 +50,5 @@ group :development do
   gem 'rails-erd'
   gem 'faker'
   gem 'annotate'
+  gem 'quiet_assets'
 end
