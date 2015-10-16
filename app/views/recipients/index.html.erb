@@ -1,4 +1,17 @@
-<p id="notice"><%= notice %></p>
+<ul class="collapsible popout" data-collapsible="accordion">
+  <% @recipients.each do |recipient| %>
+    <li>
+      <div class="collapsible-header">
+        <%= recipient.first_name %> <%= recipient.last_name %>
+
+        <span style="float: right;">#<%= recipient.id %></span>
+      </div>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+  <% end %>
+</ul>
+
+  <p id="notice"><%= notice %></p>
 
 <h1>Listing Recipients</h1>
 
@@ -43,3 +56,15 @@
 <br>
 
 <%= link_to 'New Recipient', new_recipient_path %>
+
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+  <a class="btn-floating btn-large red">
+    <i class="large mdi-editor-mode-edit"></i>
+  </a>
+                        <ul>
+                          <li><a href="css-helpers.html" class="btn-floating red" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"><i class="large mdi-communication-live-help"></i></a></li>
+                          <li><a href="app-widget.html" class="btn-floating yellow darken-1" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"><i class="large mdi-device-now-widgets"></i></a></li>
+                          <li><a href="app-calendar.html" class="btn-floating green" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"><i class="large mdi-editor-insert-invitation"></i></a></li>
+                          <li><a href="app-email.html" class="btn-floating blue" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"><i class="large mdi-communication-email"></i></a></li>
+                        </ul>
+                    </div>

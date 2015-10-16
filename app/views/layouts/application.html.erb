@@ -72,22 +72,7 @@
         </div>
 
         <div class="col s9">
-          <table>
-            <thead>
-              <tr>
-                <th data-field="id">Name</th>
-                <th data-field="name">Item Name</th>
-                <th data-field="price">Item Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Alvin</td>
-                <td>Eclair</td>
-                <td>$0.87</td>
-              </tr>
-            </tbody>
-          </table>
+          <%= yield %>
         </div>
 
       </div>
@@ -116,7 +101,7 @@
   <p class="notice"><%= notice %></p>
          <p class="alert"><%= alert %></p>
 
-<%= yield %>
+
 
 </body>
 </html>
