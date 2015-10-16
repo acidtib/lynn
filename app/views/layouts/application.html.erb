@@ -1,12 +1,98 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
   <title>Remesa</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="top" class="scrollspy">
+
+  <!-- Pre Loader -->
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+
+
+  <!--Navigation-->
+  <div class="navbar-fixed">
+    <nav id="nav_f" class="default_color" role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <%= link_to "Remesa", root_url, id: "logo-container", class: "brand-logo" %>
+
+          <% if user_signed_in? %>
+            <ul id="my-account" class="dropdown-content">
+              <li><%= link_to 'Settings', edit_user_registration_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+            </ul>
+
+            <ul class="right hide-on-med-and-down">
+              <li><a href="#intro">Recipient's</a></li>
+              <li><a class="dropdown-button" href="#!" data-activates="my-account">Hey, <%= current_user.first_name %> <%= current_user.last_name %><i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+          <% else %>
+
+          <% end %>
+
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="#intro">Service</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://github.com/joashp/material-design-template" target="_blank">Download</a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!--Transaction's-->
+  <div class="section scrollspy dashboard-transactions">
+    <div class="container">
+      <div class="row">
+
+        <div class="col s3 dashboard-sidemenu">
+          <ul class="collection">
+            <li class="collection-item">
+              <i class="Small material-icons">toll</i> <h5><%= link_to "Transaction's", root_url %></h5>
+            </li>
+            <li class="collection-item">
+              <i class="Small material-icons">contacts</i> <h5><%= link_to "Recipient's", recipients_path %></h5>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col s9">
+          <table>
+            <thead>
+              <tr>
+                <th data-field="id">Name</th>
+                <th data-field="name">Item Name</th>
+                <th data-field="price">Item Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Alvin</td>
+                <td>Eclair</td>
+                <td>$0.87</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
 <ul>
   <% if user_signed_in? %>
