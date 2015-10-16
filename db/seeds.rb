@@ -7,6 +7,15 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 puts "Creating Users"
+
+User.create(
+  email: 'arubinofaux@gmail.com',
+  password: 123456789,
+  first_name: 'Dainel',
+  last_name: 'Vera',
+  phone: '7866029447'
+)
+
 20.times do
   create_user = User.create(
     email: Faker::Internet.email,
